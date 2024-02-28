@@ -1,0 +1,14 @@
+# Ignore the dist directory
+dist/
+
+# Ignore Python compiled files and directories
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Ignore other common directories that should not be committed
+.env
+.venv
+env/
+venv/
+build/
