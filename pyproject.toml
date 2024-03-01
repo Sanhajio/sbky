@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "sbsky"
-version = "0.1.0"
+version = "0.1.1"
 description = "Bluesky Terminal Client"
 authors = ["Sanhaji Omar <sanhaji.omar@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-sbsky = "bin.bsky:run"
+sbsky = "sbsky.bin.bsky:run"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.13"
