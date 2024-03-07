@@ -67,3 +67,8 @@ class Bsky:
     async def post(self, text):
         res = await self.client.post(TextBuilderRenderer().parse(text))
         logger.info(f"Posted Text: Returned {res}")
+
+    async def feed(self):
+        res = await self.client.get_timeline(algorithm="reverse-chronological", limit=1)
+        logger.info(f"Timeline response: {res}")
+        pass

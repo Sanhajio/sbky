@@ -10,12 +10,12 @@ password = os.environ["BSKYPASSWORD"]
 
 logger.level("TRACE")
 
+
 class BskyCLI:
     def __init__(self, session_file="~/.bsky/sessionfile.txt"):
         session_file = Path(session_file).expanduser()
         self._ensure_bsky_folder(session_file)
         self.bsky = Bsky(session_file=str(session_file))
-
 
     def _ensure_bsky_folder(self, session_file):
         bsky_folder = session_file.parent
@@ -25,10 +25,13 @@ class BskyCLI:
         # await self.bsky.auth(login, password)
         return TextBuilderRenderer().render(text)
 
-
     async def post(self, text):
         await self.bsky.auth(login, password)
         await self.bsky.post(text)
+
+    async def feed(self):
+        await self.bsky.auth(login, password)
+        await self.bsky.feed()
 
 
 def run():
